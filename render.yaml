@@ -1,0 +1,41 @@
+services:
+  - type: pserv
+    name: tripcraft-mysql
+    runtime: image
+    image:
+      url: docker.io/mysql:8.4
+    envVars:
+      - key: MYSQL_DATABASE
+        value: travel_app
+      - key: MYSQL_USER
+        value: tripcraft
+      - key: MYSQL_PASSWORD
+        generateValue: true
+      - key: MYSQL_ROOT_PASSWORD
+        generateValue: true
+    disk:
+      name: mysql-data
+      mountPath: /var/lib/mysql
+      sizeGB: 10
+
+  - type: web
+    name: tripcraft-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /api/health
+    envVars:
+      - key: DB_URL
+        value: jdbc:mysql://tripcraft-mysql:3306/travel_app?serverTimezone=UTC
+      - key: DB_USER
+        value: tripcraft
+      - key: DB_PASSWORD
+        fromService:
+          name: tripcraft-mysql
+          type: pserv
+          envVarKey: MYSQL_PASSWORD
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ALLOWED_ORIGINS
+        value: https://frontend-gold-nine-20.vercel.app

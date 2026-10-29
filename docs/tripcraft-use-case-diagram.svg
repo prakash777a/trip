@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="950" viewBox="0 0 1600 950" role="img" aria-labelledby="title desc">
+  <title id="title">TripCraft Use Case Diagram</title>
+  <desc id="desc">A use case diagram showing Tourist and Administrator interactions with the TripCraft system.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-25%" width="140%" height="150%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#64748b" flood-opacity=".18"/></filter>
+    <style>
+      .boundary{fill:#fff;stroke:#1e293b;stroke-width:3}.line{stroke:#334155;stroke-width:2.5;fill:none}.actor{stroke:#1e293b;stroke-width:4;fill:none;stroke-linecap:round}.t{font-family:Arial,sans-serif;fill:#1e293b;text-anchor:middle}.system{font-size:24px;font-weight:700;text-anchor:start}.role{font-size:23px;font-weight:700}.label{font-size:18px}.ellipse-user{fill:#fff3c9;stroke:#e5a51b;stroke-width:3}.ellipse-admin{fill:#e4f3da;stroke:#579943;stroke-width:3}.ellipse-shared{fill:#dbeafe;stroke:#4387bd;stroke-width:3}
+    </style>
+  </defs>
+  <rect width="1600" height="950" fill="#fff"/>
+  <rect class="boundary" x="205" y="25" width="1190" height="875"/>
+  <text class="t system" x="225" y="62">TripCraft System</text>
+
+  <!-- Tourist actor -->
+  <g class="actor"><circle cx="92" cy="422" r="21"/><path d="M92 443 L92 535 M52 473 L132 473 M92 535 L55 597 M92 535 L129 597"/></g>
+  <text class="t role" x="92" y="635">Tourist</text>
+  <!-- Administrator actor -->
+  <g class="actor"><circle cx="1508" cy="422" r="21"/><path d="M1508 443 L1508 535 M1468 473 L1548 473 M1508 535 L1471 597 M1508 535 L1545 597"/></g>
+  <text class="t role" x="1508" y="635">Administrator</text>
+
+  <!-- Use cases -->
+  <g filter="url(#shadow)">
+    <ellipse class="ellipse-shared" cx="800" cy="120" rx="175" ry="37"/>
+    <ellipse class="ellipse-user" cx="480" cy="220" rx="185" ry="37"/>
+    <ellipse class="ellipse-user" cx="480" cy="310" rx="185" ry="37"/>
+    <ellipse class="ellipse-user" cx="480" cy="400" rx="185" ry="37"/>
+    <ellipse class="ellipse-user" cx="480" cy="490" rx="185" ry="37"/>
+    <ellipse class="ellipse-user" cx="480" cy="580" rx="185" ry="37"/>
+    <ellipse class="ellipse-user" cx="480" cy="670" rx="185" ry="37"/>
+    <ellipse class="ellipse-user" cx="480" cy="760" rx="185" ry="37"/>
+    <ellipse class="ellipse-admin" cx="1120" cy="220" rx="185" ry="37"/>
+    <ellipse class="ellipse-admin" cx="1120" cy="310" rx="185" ry="37"/>
+    <ellipse class="ellipse-admin" cx="1120" cy="400" rx="185" ry="37"/>
+    <ellipse class="ellipse-admin" cx="1120" cy="490" rx="185" ry="37"/>
+    <ellipse class="ellipse-admin" cx="1120" cy="580" rx="185" ry="37"/>
+    <ellipse class="ellipse-admin" cx="1120" cy="670" rx="185" ry="37"/>
+    <ellipse class="ellipse-admin" cx="1120" cy="760" rx="185" ry="37"/>
+  </g>
+
+  <text class="t label" x="800" y="127">Login / Logout</text>
+  <text class="t label" x="480" y="227">Register</text>
+  <text class="t label" x="480" y="317">Browse Destinations and Packages</text>
+  <text class="t label" x="480" y="407">View Package Details and Reviews</text>
+  <text class="t label" x="480" y="497">Use AI Budget Planner</text>
+  <text class="t label" x="480" y="587">Create and Customize Booking</text>
+  <text class="t label" x="480" y="677">Manage Booking and Download Invoice</text>
+  <text class="t label" x="480" y="767">Cancel Booking / Submit Review</text>
+  <text class="t label" x="1120" y="227">Manage Destinations and Places</text>
+  <text class="t label" x="1120" y="317">Manage Packages and Images</text>
+  <text class="t label" x="1120" y="407">Manage Hotels and Rooms</text>
+  <text class="t label" x="1120" y="497">Manage Vehicles</text>
+  <text class="t label" x="1120" y="587">Manage Booking Status</text>
+  <text class="t label" x="1120" y="677">Bulk Upload Rooms / Vehicles</text>
+  <text class="t label" x="1120" y="767">View Dashboard Statistics</text>
+
+  <!-- Associations -->
+  <path class="line" d="M113 413 L625 120 M113 426 L295 220 M113 440 L295 310 M113 454 L295 400 M113 468 L295 490 M113 482 L295 580 M113 496 L295 670 M113 510 L295 760"/>
+  <path class="line" d="M1487 413 L975 120 M1487 426 L1305 220 M1487 440 L1305 310 M1487 454 L1305 400 M1487 468 L1305 490 M1487 482 L1305 580 M1487 496 L1305 670 M1487 510 L1305 760"/>
+</svg>

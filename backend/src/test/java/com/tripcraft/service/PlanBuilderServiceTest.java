@@ -1,0 +1,5 @@
+package com.tripcraft.service;
+import org.junit.jupiter.api.Test; import org.springframework.jdbc.core.JdbcTemplate; import java.math.BigDecimal; import java.util.*; import static org.assertj.core.api.Assertions.assertThat; import static org.mockito.ArgumentMatchers.*; import static org.mockito.Mockito.*;
+class PlanBuilderServiceTest {
+  @Test void buildsTargetedBudgetTiersWithinLimitAndAddsCostBreakdown(){JdbcTemplate db=mock(JdbcTemplate.class);when(db.queryForList(anyString(),any(Object[].class))).thenReturn(List.of(Map.of("id",1L,"title","Nature","durationDays",3,"price",new BigDecimal("5000"),"destinationName","Coorg","imageUrl","x"),Map.of("id",2L,"title","Royal","durationDays",4,"price",new BigDecimal("9000"),"destinationName","Jaipur","imageUrl","y")));var result=new PlanBuilderService(db).build(new BigDecimal("20000"),2,3,null);assertThat(result).hasSize(2);assertThat(result.get(0)).containsKeys("estimatedTotal","remainingBalance","foodEstimate");assertThat((BigDecimal)result.get(0).get("estimatedTotal")).isEqualByComparingTo("10000");}
+}

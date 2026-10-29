@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+@theme {
+  --color-primary: #0d9488;
+  --color-accent: #f97316;
+  --color-ink: #0f172a;
+  --color-soft: #f8fafc;
+  --font-heading: Poppins, sans-serif;
+  --font-body: Inter, sans-serif;
+  --shadow-soft: 0 12px 40px rgba(15, 23, 42, .08);
+}
+@layer base { body{@apply bg-soft text-slate-800 font-body antialiased;} h1,h2,h3,h4{@apply font-heading text-slate-950;} }
+@utility btn { @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold transition duration-200 focus:outline-none focus:ring-4 disabled:opacity-50; }
+@utility btn-primary { @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold transition duration-200 bg-primary text-white hover:bg-teal-700 focus:outline-none focus:ring-4 focus:ring-teal-100 disabled:opacity-50; }
+@utility btn-accent { @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold transition duration-200 bg-accent text-white hover:bg-orange-600 focus:outline-none focus:ring-4 focus:ring-orange-100 disabled:opacity-50; }
+@utility btn-ghost { @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-semibold transition duration-200 bg-white/10 text-white hover:bg-white/20; }
+@utility card { @apply rounded-2xl bg-white shadow-soft; }
+@utility input { @apply w-full rounded-xl border border-slate-200 bg-white px-4 py-3 outline-none transition focus:border-primary focus:ring-4 focus:ring-teal-50; }
+@utility pill { @apply rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-teal-700; }
+@utility price { @apply font-bold text-teal-700; }
+@utility price-unit { @apply font-medium text-slate-600; }
+
+/* Form controls need an explicit foreground color because the app supports
+   dark mode while keeping booking surfaces light. This also keeps typed text
+   and placeholders readable across Chrome/Edge defaults. */
+input, select, textarea { color: #0f172a; caret-color: #0d9488; }
+input::placeholder, textarea::placeholder { color: #94a3b8; opacity: 1; }
+input[type="date"] { color-scheme: light; }
+label { color: #334155; }
+.booking-page label { display: block; font-weight: 600; }
+.booking-page .booking-surface { color: #0f172a; }
+.booking-page .booking-surface h1,
+.booking-page .booking-surface h2,
+.booking-page .booking-surface h3 { color: #0f172a; }
+.booking-page .booking-surface .input,
+.booking-page .booking-surface input,
+.booking-page .booking-surface select,
+.booking-page .booking-surface textarea { color: #0f172a; background: #fff; }
+/* Cards remain light in dark mode, so their content must not inherit the
+   page-level light foreground. Price has a dedicated deep-teal treatment
+   for a clear, consistent contrast on every white card. */
+.dark .card { color: #0f172a; }
+.dark input, .dark select, .dark textarea { color: #e2e8f0; background: #1e293b; border-color: #475569; }
+.dark input::placeholder, .dark textarea::placeholder { color: #94a3b8; }
+.dark input[type="date"] { color-scheme: dark; }

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">TripCraft System Architecture</title>
+  <desc id="desc">A four-column TripCraft architecture diagram showing users, React frontend, Spring Boot backend, and data services.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#64748b" flood-opacity=".20"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#475569"/></marker>
+    <style>
+      .panel{fill:#f8fafc;stroke:#cbd5e1;stroke-width:3}.box{fill:#dbeafe;stroke:#4387bd;stroke-width:3}.user{fill:#fff2c7;stroke:#efa91d;stroke-width:3}.data{fill:#e7f4dd;stroke:#589a42;stroke-width:3}.local{fill:#f1f5f9;stroke:#64748b;stroke-width:3}.t{font-family:Arial,sans-serif;fill:#1e293b;text-anchor:middle}.head{font-size:23px;font-weight:700}.title{font-size:21px;font-weight:700}.body{font-size:15px}.small{font-size:14px}.line{stroke:#475569;stroke-width:3;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#ffffff"/>
+
+  <g filter="url(#shadow)">
+    <rect class="panel" x="25" y="30" width="235" height="830" rx="34"/>
+    <rect class="panel" x="285" y="30" width="600" height="830" rx="52"/>
+    <rect class="panel" x="915" y="30" width="300" height="830" rx="34"/>
+    <rect class="panel" x="1245" y="30" width="330" height="830" rx="34"/>
+  </g>
+
+  <text class="t head" x="142" y="75">Users</text>
+  <text class="t head" x="585" y="75">Presentation Layer – React + Vite</text>
+  <text class="t head" x="1065" y="75">Backend Layer – Spring Boot</text>
+  <text class="t head" x="1410" y="75">Data and Supporting Services</text>
+
+  <g filter="url(#shadow)">
+    <rect class="user" x="52" y="125" width="181" height="145" rx="16"/>
+    <rect class="user" x="52" y="475" width="181" height="145" rx="16"/>
+    <rect class="box" x="310" y="125" width="550" height="145" rx="18"/>
+    <rect class="box" x="310" y="300" width="550" height="145" rx="18"/>
+    <rect class="box" x="310" y="475" width="550" height="145" rx="18"/>
+    <rect class="box" x="310" y="650" width="550" height="145" rx="18"/>
+    <rect class="box" x="945" y="180" width="240" height="415" rx="22"/>
+    <rect class="local" x="945" y="650" width="240" height="115" rx="17"/>
+    <rect class="data" x="1275" y="115" width="270" height="125" rx="17"/>
+    <rect class="data" x="1275" y="275" width="270" height="125" rx="17"/>
+    <rect class="data" x="1275" y="435" width="270" height="125" rx="17"/>
+    <rect class="data" x="1275" y="595" width="270" height="125" rx="17"/>
+  </g>
+
+  <text class="t title" x="142" y="190">Tourist</text><text class="t body" x="142" y="219">Web Browser</text>
+  <text class="t title" x="142" y="540">Administrator</text><text class="t body" x="142" y="569">Web Browser</text>
+
+  <text class="t title" x="585" y="182">Public Pages</text>
+  <text class="t body" x="585" y="215">Home · Destinations · Package Details · Login · Register</text>
+  <text class="t title" x="585" y="357">Tourist Pages</text>
+  <text class="t body" x="585" y="390">Profile · Booking · My Bookings · Budget Planner · Reviews</text>
+  <text class="t title" x="585" y="532">Admin Pages</text>
+  <text class="t body" x="585" y="565">Dashboard · Destinations · Packages · Hotels · Rooms</text>
+  <text class="t body" x="585" y="589">Vehicles · Bookings · Statistics</text>
+  <text class="t title" x="585" y="707">Shared Components and API Client</text>
+  <text class="t body" x="585" y="740">Navbar · Forms · Cards · Protected Routes · Axios · JWT Token</text>
+
+  <text class="t title" x="1065" y="240">REST API and Service Layer</text>
+  <text class="t body" x="1065" y="280">Controllers</text>
+  <text class="t body" x="1065" y="310">Booking and Pricing</text>
+  <text class="t body" x="1065" y="340">Availability and Reviews</text>
+  <text class="t body" x="1065" y="370">Spring Security and JWT</text>
+  <text class="t body" x="1065" y="400">AI Budget Planner</text>
+  <text class="t body" x="1065" y="430">Invoice and Image Services</text>
+  <text class="t body" x="1065" y="460">Spring Data JPA Repositories</text>
+  <text class="t title" x="1065" y="695">File Storage</text><text class="t body" x="1065" y="724">Images and PDF Invoices</text>
+
+  <text class="t title" x="1410" y="163">MySQL Database</text>
+  <text class="t small" x="1410" y="195">users · destinations · packages</text><text class="t small" x="1410" y="217">bookings · hotels · rooms · vehicles</text>
+  <text class="t title" x="1410" y="323">Flyway Migration</text>
+  <text class="t small" x="1410" y="355">schema creation · seed data</text><text class="t small" x="1410" y="377">database version management</text>
+  <text class="t title" x="1410" y="483">AI Planning Service</text>
+  <text class="t small" x="1410" y="515">budget planning · recommendations</text><text class="t small" x="1410" y="537">rule-based fallback</text>
+  <text class="t title" x="1410" y="643">Security and Validation</text>
+  <text class="t small" x="1410" y="675">role-based authorization</text><text class="t small" x="1410" y="697">input and upload validation</text>
+
+  <path class="line" d="M233 180 L310 180"/><path class="line" d="M310 215 L233 215"/>
+  <path class="line" d="M233 530 L310 530"/><path class="line" d="M310 565 L233 565"/>
+  <path class="line" d="M860 380 L945 380"/><path class="line" d="M945 410 L860 410"/>
+  <path class="line" d="M1185 270 L1275 205"/><path class="line" d="M1275 305 L1185 335"/><path class="line" d="M1185 450 L1275 495"/><path class="line" d="M1185 520 L1275 645"/>
+  <path class="line" d="M1065 595 L1065 650"/><path class="line" d="M1085 650 L1085 595"/>
+</svg>
